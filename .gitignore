@@ -117,3 +117,9 @@ cython_debug/
 
 # PEP 582; used by python locally-installed packages
 __pypackages__/
+
+# ANTLR4
+*.interp
+*.tokens
+
+# 

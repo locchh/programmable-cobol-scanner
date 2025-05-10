@@ -1,4 +1,4 @@
-# Generated from Cobol85.g4 by ANTLR 4.13.2
+# Generated from cobol_parser_py/Cobol85.g4 by ANTLR 4.13.2
 from antlr4 import *
 if "." in __name__:
     from .Cobol85Parser import Cobol85Parser
