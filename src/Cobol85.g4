@@ -64,37 +64,37 @@ programIdParagraph
 // - author paragraph ----------------------------------
 
 authorParagraph
-    : AUTHOR DOT_FS commentEntry?
+    : AUTHOR DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)? (DOT_FS)?
     ;
 
 // - installation paragraph ----------------------------------
 
 installationParagraph
-    : INSTALLATION DOT_FS commentEntry?
+    : INSTALLATION DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)? (DOT_FS)?
     ;
 
 // - date written paragraph ----------------------------------
 
 dateWrittenParagraph
-    : DATE_WRITTEN DOT_FS commentEntry?
+    : DATE_WRITTEN DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)? (DOT_FS)?
     ;
 
 // - date compiled paragraph ----------------------------------
 
 dateCompiledParagraph
-    : DATE_COMPILED DOT_FS commentEntry?
+    : DATE_COMPILED DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)? (DOT_FS)?
     ;
 
 // - security paragraph ----------------------------------
 
 securityParagraph
-    : SECURITY DOT_FS commentEntry?
+    : SECURITY DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)? (DOT_FS)?
     ;
 
 // - remarks paragraph ----------------------------------
 
 remarksParagraph
-    : REMARKS DOT_FS commentEntry?
+    : REMARKS DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)? (DOT_FS)?
     ;
 
 // --- environment division --------------------------------------------------------------------

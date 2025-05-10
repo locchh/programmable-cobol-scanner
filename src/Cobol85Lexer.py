@@ -1,4 +1,4 @@
-# Generated from cobol_parser_py/Cobol85.g4 by ANTLR 4.13.2
+# Generated from src/Cobol85.g4 by ANTLR 4.13.2
 from antlr4 import *
 from io import StringIO
 import sys
