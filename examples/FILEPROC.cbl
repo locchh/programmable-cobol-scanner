@@ -1,0 +1,53 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. FILEPROC.
+       
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SOURCE-COMPUTER. X86-64.
+       OBJECT-COMPUTER. X86-64.
+       
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT EMPLOYEE-FILE ASSIGN TO "EMPLOYEE.DAT"
+           ORGANIZATION IS SEQUENTIAL
+           ACCESS MODE IS SEQUENTIAL
+           FILE STATUS IS FILE-STATUS.
+       
+       DATA DIVISION.
+       FILE SECTION.
+       FD EMPLOYEE-FILE
+           LABEL RECORDS ARE STANDARD
+           RECORD CONTAINS 80 CHARACTERS.
+       01 EMPLOYEE-RECORD.
+           05 EMPLOYEE-ID       PIC 9(5).
+           05 EMPLOYEE-NAME     PIC X(20).
+           05 EMPLOYEE-DEPT     PIC X(10).
+           05 EMPLOYEE-SALARY   PIC 9(7)V99.
+           05 FILLER            PIC X(36).
+       
+       WORKING-STORAGE SECTION.
+       01 FILE-STATUS           PIC XX.
+       01 WS-EOF                PIC X VALUE "N".
+       
+       PROCEDURE DIVISION.
+       MAIN-PARA.
+           OPEN INPUT EMPLOYEE-FILE.
+           IF FILE-STATUS NOT = "00"
+               DISPLAY "ERROR OPENING FILE: " FILE-STATUS
+               STOP RUN
+           END-IF.
+           
+           PERFORM READ-RECORD.
+           PERFORM PROCESS-RECORD UNTIL WS-EOF = "Y".
+           
+           CLOSE EMPLOYEE-FILE.
+           STOP RUN.
+           
+       READ-RECORD.
+           READ EMPLOYEE-FILE
+               AT END MOVE "Y" TO WS-EOF
+           END-READ.
+           
+       PROCESS-RECORD.
+           DISPLAY EMPLOYEE-ID " " EMPLOYEE-NAME " " EMPLOYEE-SALARY.
+           PERFORM READ-RECORD.

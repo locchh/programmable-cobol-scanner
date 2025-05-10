@@ -1,0 +1,39 @@
+--- Cobol85.g4	2025-05-10 11:15:10.000000000 +0700
++++ Cobol85_modified.g4	2025-05-10 11:15:10.000000000 +0700
+@@ -64,7 +64,7 @@
+ // - author paragraph ----------------------------------
+ 
+ authorParagraph
+-    : AUTHOR DOT_FS commentEntry?
++    : AUTHOR DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)?
+     ;
+ 
+ // - installation paragraph ----------------------------------
+@@ -72,7 +72,7 @@
+ installationParagraph
+-    : INSTALLATION DOT_FS commentEntry?
++    : INSTALLATION DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)?
+     ;
+ 
+ // - date written paragraph ----------------------------------
+@@ -80,7 +80,7 @@
+ dateWrittenParagraph
+-    : DATE_WRITTEN DOT_FS commentEntry?
++    : DATE_WRITTEN DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)?
+     ;
+ 
+ // - date compiled paragraph ----------------------------------
+@@ -88,7 +88,7 @@
+ dateCompiledParagraph
+-    : DATE_COMPILED DOT_FS commentEntry?
++    : DATE_COMPILED DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)?
+     ;
+ 
+ // - security paragraph ----------------------------------
+@@ -96,7 +96,7 @@
+ securityParagraph
+-    : SECURITY DOT_FS commentEntry?
++    : SECURITY DOT_FS (IDENTIFIER | NONNUMERICLITERAL | commentEntry)?
+     ;
+ 
+ // - remarks paragraph ----------------------------------
