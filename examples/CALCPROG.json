@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "extraction_date": "2025-05-10T13:46:53.737311",
+    "config_file": "yaml-based configuration"
+  },
+  "identification": {
+    "program_id": "CALCPROG"
+  },
+  "environment": {},
+  "data": {
+    "working_storage": [
+      {
+        "level": "01",
+        "name": "NUM1",
+        "picture": "9(5)",
+        "value": "25"
+      },
+      {
+        "level": "01",
+        "name": "NUM2",
+        "picture": "9(5)",
+        "value": "10"
+      },
+      {
+        "level": "01",
+        "name": "RESULT",
+        "picture": "9(6)"
+      },
+      {
+        "level": "01",
+        "name": "OPERATION",
+        "picture": "X"
+      }
+    ],
+    "file_section": [],
+    "linkage_section": []
+  },
+  "procedure": {
+    "paragraphs": {
+      "MAIN-PARA": {
+        "statements": [
+          "DISPLAY _ _ STR0 _ _",
+          "EVALUATEOPERATIONWHEN _ _ STR0 _ _ ADDNUM1TONUM2GIVINGRESULTWHEN _ _ STR1 _ _ SUBTRACTNUM2FROMNUM1GIVINGRESULTWHEN _ _ STR2 _ _ MULTIPLYNUM1BYNUM2GIVINGRESULTWHEN _ _ STR3 _ _ DIVIDENUM1BYNUM2GIVINGRESULTONSIZEERRORDISPLAY _ _ STR4 _ _ NOTONSIZEERRORDISPLAY _ _ STR5 _ _ RESULTEND-DIVIDEWHENOTHERDISPLAY _ _ STR6 _ _ END-EVALUATE",
+          "IFRESULT > 1000DISPLAY _ _ STR0 _ _ ELSEDISPLAY _ _ STR1 _ _ END-IF"
+        ]
+      }
+    },
+    "sections": {}
+  },
+  "custom_analysis": {
+    "variable_usage": {
+      "NUM1": {
+        "level": "01",
+        "section": "working_storage"
+      },
+      "NUM2": {
+        "level": "01",
+        "section": "working_storage"
+      },
+      "RESULT": {
+        "level": "01",
+        "section": "working_storage"
+      },
+      "OPERATION": {
+        "level": "01",
+        "section": "working_storage"
+      }
+    },
+    "paragraph_calls": {},
+    "data_dependencies": {}
+  }
+}

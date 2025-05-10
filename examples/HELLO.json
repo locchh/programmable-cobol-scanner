@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "extraction_date": "2025-05-10T13:47:07.715647",
+    "config_file": "yaml-based configuration"
+  },
+  "identification": {
+    "program_id": "HELLO",
+    "author": "CASCADE",
+    "date_written": "2025-05-10"
+  },
+  "environment": {},
+  "data": {
+    "working_storage": [
+      {
+        "level": "01",
+        "name": "GREETING",
+        "picture": "X(20)",
+        "value": "HELLO, WORLD!"
+      }
+    ],
+    "file_section": [],
+    "linkage_section": []
+  },
+  "procedure": {
+    "paragraphs": {
+      "MAIN-PARA": {
+        "statements": [
+          "DISPLAYGREETING"
+        ]
+      }
+    },
+    "sections": {}
+  },
+  "custom_analysis": {
+    "variable_usage": {
+      "GREETING": {
+        "level": "01",
+        "section": "working_storage"
+      }
+    },
+    "paragraph_calls": {},
+    "data_dependencies": {}
+  }
+}

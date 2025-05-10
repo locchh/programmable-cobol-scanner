@@ -1,0 +1,28 @@
+output_format: json
+
+extraction:
+  data:
+    enabled: true
+    sections:
+      - name: working_storage
+        enabled: true
+        extract_level_numbers: [01, 05, 10, 15, 20, 77]
+        extract_fields:
+          - name
+          - level
+          - picture
+          - value
+          - usage
+      - name: file_section
+        enabled: true
+        extract_fields:
+          - name
+          - level
+          - organization
+          - access_mode
+      - name: linkage_section
+        enabled: true
+        extract_fields:
+          - name
+          - level
+          - picture

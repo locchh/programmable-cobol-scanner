@@ -1,0 +1,16 @@
+output_format: json
+
+extraction:
+  procedure:
+    enabled: true
+    elements:
+      - paragraphs
+      - sections
+    statement_types:
+      - PERFORM
+      - IF
+      - MOVE
+      - COMPUTE
+      - CALL
+      - DISPLAY
+    extract_comments: true

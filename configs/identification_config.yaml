@@ -1,0 +1,8 @@
+output_format: json
+extraction:
+  identification:
+    enabled: true
+    elements:
+      - program_id
+      - author
+      - date_written
