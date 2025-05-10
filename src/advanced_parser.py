@@ -208,19 +208,8 @@ def main():
         file_path = sys.argv[1]
         parse_file(file_path, verbose)
     else:
-        # Parse all .cbl files in the examples directory
-        examples_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'examples')
-        success_count = 0
-        total_count = 0
+        print("Please provide a file path as an argument.")
+        sys.exit(1)
         
-        for filename in os.listdir(examples_dir):
-            if filename.endswith('.cbl'):
-                total_count += 1
-                file_path = os.path.join(examples_dir, filename)
-                if parse_file(file_path, verbose):
-                    success_count += 1
-        
-        print(f"\nSummary: Successfully parsed {success_count} out of {total_count} files.")
-
 if __name__ == '__main__':
     main()

@@ -178,7 +178,7 @@ def main():
     else:
         program_name = "COMPLEX"
     
-    output_file = f"/home/loc/Works/untitled/examples/{program_name}.cbl"
+    output_file = f"./examples/{program_name}.cbl"
     
     print(f"Generating complex COBOL program: {program_name}")
     cobol_code = generate_complex_cobol_program(program_name)

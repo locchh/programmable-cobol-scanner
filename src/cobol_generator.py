@@ -156,7 +156,7 @@ def main():
     else:
         program_name = "AUTOGEN"
     
-    output_file = f"/home/loc/Works/untitled/examples/{program_name}.cbl"
+    output_file = f"./examples/{program_name}.cbl"
     
     print(f"Generating COBOL program: {program_name}")
     cobol_code = generate_sample_program(program_name)
